@@ -23,31 +23,25 @@ const Create = (props) => {
 
         // settodos([...todos, newtodo])
         settitle("");
+        
     };
-
-    const buttoncss = {
-        color: "white",
-        padding: "5px 10px",
-        backgroundColor: "transparent",
-        border: "1px solid white",
-        borderRadius: "5px",
-    };
-
     return (
-        <>
-            <h1>Create Tasks</h1>
+        <div className="bg-red-300 p-10 rounded-xl border w-[60%]">
+            <h1 className="text-center text-[50px] text-gray-700 font-medium text-start m-5">Create Tasks</h1>
             <form onSubmit={SubmitHandler}>
                 <input
                     onChange={(e) => settitle(e.target.value)}
                     value={title}
                     type="text"
                     placeholder="title"
+                    className="border p-4 w-full text-xl outline-none rounded-xl bg-gray-300 "
+                    required
                 />
                 <br />
                 <br />
-                <button style={buttoncss}>Create Todo</button>
+                <button className=" border rounded-xl p-3 hover:bg-sky-500 font-medium text-sky-50 bg-sky-600 text-xl text-gray " >Create Todo</button>
             </form>
-        </>
+        </div>
     );
 };
 
