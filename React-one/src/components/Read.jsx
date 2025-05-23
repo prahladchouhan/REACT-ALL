@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { toast } from "react-toastify";
 
 const Read = (props) => {
     const todos = props.todos;
@@ -7,12 +8,13 @@ const Read = (props) => {
     const DeleteHandler =(id)=>{
         const filtedtodo=todos.filter((todos)=>todos.id!=id);
         settodos(filtedtodo);   
+        toast.error("Deleted!")
     };
 
     const rendertodos = todos.map((todo) => {
         return (
             <li  key={todo.id} className="p-2 text-sky-100 bg-sky-600 m-1 rounded-xl flex flex-clo justify-between">
-                {todo.title}|{" "}
+                {todo.title} {" "}
                 <span onClick={()=>DeleteHandler(todo.id)}
                     className="p-1 text-sky-100 bg-red-800  rounded-xl "
                     >Delete</span>

@@ -1,48 +1,54 @@
 import { nanoid } from "nanoid";
-
-import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const Create = (props) => {
-    const todos = props.todos;
-    const settodos = props.settodos;
+  const todos = props.todos;
+  const settodos = props.settodos;
 
-    const [title, settitle] = useState("");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-    const SubmitHandler = (e) => {
-        e.preventDefault();
+  const SubmitHandler = (data) => {
+    data.id = nanoid();
+    data.isCompleted = false;
 
-        const newtodo = {
-            id: nanoid(),
-            title: title,
-            isCompleted: false,
-        };
+    let copytodos = [...todos];
+    copytodos.push(data);
+    settodos(copytodos);
 
-        let copytodos = [...todos];
-        copytodos.push(newtodo);
-        settodos(copytodos);
+      toast.success("Todo created!");
+    reset();
+   
+  };
+  return (
+    <div className="bg-red-300 p-10 rounded-xl border w-[60%]">
+      <h1 className=" text-[50px] text-gray-700 font-medium text-start m-5">
+        Create Tasks
+      </h1>
+      <form onSubmit={handleSubmit(SubmitHandler)}>
+        <input
+         className="border p-4 w-full text-xl outline-none rounded-xl bg-gray-300 "
+          {...register("title", { required: "title can't be empty" })}
+          type="text"
+          placeholder="title"
+        />
+        <small className="font-semibold text-xl text-amber-950  ">
+          {errors?.title?.message}
+        </small>
 
-        // settodos([...todos, newtodo])
-        settitle("");
-        
-    };
-    return (
-        <div className="bg-red-300 p-10 rounded-xl border w-[60%]">
-            <h1 className="text-center text-[50px] text-gray-700 font-medium text-start m-5">Create Tasks</h1>
-            <form onSubmit={SubmitHandler}>
-                <input
-                    onChange={(e) => settitle(e.target.value)}
-                    value={title}
-                    type="text"
-                    placeholder="title"
-                    className="border p-4 w-full text-xl outline-none rounded-xl bg-gray-300 "
-                    required
-                />
-                <br />
-                <br />
-                <button className=" border rounded-xl p-3 hover:bg-sky-500 font-medium text-sky-50 bg-sky-600 text-xl text-gray " >Create Todo</button>
-            </form>
-        </div>
-    );
+        <br />
+        <br />
+        <button className=" border rounded-xl p-3 hover:bg-sky-500 font-medium text-sky-50 bg-sky-600 text-xl text-gray ">
+          Create Todo
+        </button>
+      </form>
+    </div>
+  );
 };
 
 export default Create;
