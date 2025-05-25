@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const Nav = () => {
   return (
-    <div className="flex justify-center gap-10 p-5 font-semibold text-2xl">
-        <Link to="/">Home</Link>
-        <Link to="/product">Product</Link>
-        <Link to="/service">Service</Link>
-        <Link to="/about">About</Link>
+    <div className="flex justify-center gap-10  font-semibold text-2xl">
+        <NavLink  className={(e)=>(e.isActive ? "text-amber-800" : "")} to="/">Home</NavLink>
+        <NavLink  className={(e)=>(e.isActive ? "text-amber-800" : "")} to="/product">Product</NavLink>
+        <NavLink className={(e)=>(e.isActive ? "text-amber-800" : "")}  to="/service">Service</NavLink>
+        <NavLink  className={(e)=>(e.isActive ? "text-amber-800" : "")} to="/about">About</NavLink>
         
       
     </div>
