@@ -52,7 +52,7 @@ const Create = () => {
           {/* <label className="text-gray-700">Description</label> */}
           <textarea
             type="text"
-           {...register("description")}
+           {...register("desc")}
             placeholder="//Enter Descrption!"
             className="block px-4 py-2 border-b-2 outline-0 mt-1.5 h-15 "
           ></textarea>
@@ -60,7 +60,7 @@ const Create = () => {
           <div className="flex gap-20 items-center border-b-1 p-2">
              {/* <label className="text-gray-700">Ingredients</label> */}
           <textarea
-           {...register("ingredients")}
+           {...register("ingr")}
             type="text"
             placeholder="//Enter ingredients!"
             className="block px-4 py-2 border-b-2 outline-0 mt-1.5 h-15 "
@@ -69,7 +69,7 @@ const Create = () => {
         <div className="flex gap-20 items-center border-b-1 p-2">
           {/* <label className="text-gray-700">Instruction</label> */}
           <textarea
-           {...register("instructions")}
+           {...register("inst")}
             type="text"
             placeholder="//Enter Instruction!"
             className="block px-4 py-2 border-b-2 outline-0 mt-1.5 h-15 "
@@ -80,8 +80,9 @@ const Create = () => {
           <select className="block px-4 py-2 outline-0 font-extrabold mt-1.5"
            {...register("category")}
           >
-            <option>Veg</option>
-            <option>Non-veg</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
           </select>
         </div>
         <button className="block px-4 py-2  mt-4.5 rounded-xl text-amber-50 hover:scale-95 items-center bg-gray-700">
