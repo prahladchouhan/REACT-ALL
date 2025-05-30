@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { recipecontext } from "../context/RecipesContext";
+ 
 import RecipeCard from "../components/RecipeCard";
 
 const Recipes = () => {
@@ -10,9 +11,12 @@ const Recipes = () => {
     ));
 
     return (
+        <>
         <div className="flex flex-wrap">
             {data.length > 0 ? renderrecipes : "No recipes found!"}
         </div>
+        </>
+        
     );
 }
 
