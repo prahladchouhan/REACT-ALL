@@ -26,6 +26,7 @@ const SingleRecipe = () => {
         copydata[index] = { ...copydata[index], ...recipe };
         setdata(copydata);
         toast.success("Recipe updated!");
+        
     };
 
     const DeleteHandler = () => {
@@ -36,23 +37,23 @@ const SingleRecipe = () => {
     };
 
     return recipe ? (
-        <div className="w-full flex">
-            <div className="left w-1/2 p-2">
-                <h1 className="text-5xl font-black">{recipe.title}</h1>
-                <img className="h-[20vh]" src={recipe.image} alt="" />
-                <h1>{recipe.chef}</h1>
-                <p>{recipe.desc}</p>
+        <div className=" w-90% flex gap-0.5 m-5 p-2 ">
+            <div className="left w-1/2 p-4  ">
+                <h1 className="text-4xl font-black py-4  ">{recipe.title}</h1>
+                <img className="h-[40vh] w-100 rounded-3xl" src={recipe.image} alt="" />
+                <h1 className="text-blue-950 font-bold p-4 border-b-2">Chef Name: {recipe.chef}</h1>
+                <p className="px-2 pb-3 text-2xl">{recipe.desc}</p>
             </div>
-
-            <form className="w-1/2 p-2" onSubmit={handleSubmit(SubmitHandler)}>
+            <div className="w-1/2 p-4 ">
+                 <form className=" p-5 border-2 rounded-4xl mx-30 " onSubmit={handleSubmit(SubmitHandler)}>
                 <input
-                    className="block border-b outline-0 p-2"
+                    className="block border-b outline-0  "
                     {...register("image")}
                     type="url"
                     placeholder="Enter Image Url"
                 />
                 <small className="text-red-400">
-                    THis is how the error is shown
+                    This is how the error is shown
                 </small>
                 <input
                     className="block border-b outline-0 p-2"
@@ -96,7 +97,8 @@ const SingleRecipe = () => {
                     <option value="dinner">Dinner</option>
                 </select>
 
-                <button className="mt-5 block bg-blue-900 px-4 py-2 rounded">
+                <div className="flex gap-10 font-medium text-amber-50">
+                    <button className="mt-5 block bg-blue-900 px-4 py-2 rounded">
                     Update Recipe
                 </button>
                 <button
@@ -105,7 +107,11 @@ const SingleRecipe = () => {
                 >
                     Delete Recipe
                 </button>
+                </div>
             </form>
+            </div>
+
+           
         </div>
     ) : (
         "Loading..."

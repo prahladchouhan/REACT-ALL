@@ -5,12 +5,12 @@ const RecipeCard = (props) => {
   return (
     <Link
       to={`/recipes/details/${id}`}
-      className="duration-800 hover:scale-95 mr-3 mb-3 block w-[23vw] rounded overflow-hidden shadow"
+      className=" mr-3 mb-3 block w-[23vw] rounded overflow-hidden shadow bg-amber-200 p-10 m-5"
     >
-      <img className="object-cover w-full h-[20vh]" src={image} alt="" />
-      <h1 className="px-2 mt-2 font-black">{title}</h1>
-      <small className="px-2 text-red-400">{chef}</small>
-      <p className="px-2 pb-3">
+      <img className="duration-800 hover:scale-95 object-cover w-full h-[40vh] rounded-4xl" src={image} alt="" />
+      <h1 className="px-2 mt-2 font-black ">{title}</h1>
+      <small className="px-2  text-blue-950">{chef}</small>
+      <p className="px-2 pb-3 text-sm text-red-400">
         {desc.slice(0, 100)}... <small className="text-blue-400">more</small>
       </p>
     </Link>
