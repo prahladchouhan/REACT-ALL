@@ -2,15 +2,23 @@ import { nanoid } from "nanoid";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { recipecontext } from "../context/RecipesContext";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
+  const navigate=useNavigate();
   const { data, setdata } = useContext(recipecontext);
   const { register, handleSubmit, reset } = useForm();
 
   const submitHandler = (recipes) => {
     recipes.id = nanoid();
-    setdata([...data, recipes]);
+    const copydata = [...data];
+    copydata.push(recipes);
+    setdata(copydata);
+    localStorage.setItem("recipes", JSON.stringify(copydata));
+    toast.success("new recipe created!");
     reset();
+    navigate("/recipes");
   };
 
   return (
@@ -19,9 +27,10 @@ const Create = () => {
         <h1 className="text-amber-200 bg-gray-500 w-150 justify-center flex p-5">
           Add Recipe!
         </h1>
-        <img 
-        className=" h-[100%]"
-        src="https://plus.unsplash.com/premium_vector-1737047236495-4efe6101f0a2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVjaXBlJTIwZm9ybXxlbnwwfHwwfHx8MA%3D%3D" />
+        <img
+          className=" h-[100%]"
+          src="https://plus.unsplash.com/premium_vector-1737047236495-4efe6101f0a2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVjaXBlJTIwZm9ybXxlbnwwfHwwfHx8MA%3D%3D"
+        />
       </div>
       <form
         className="  w-200  p-5 rounded-2xl  "

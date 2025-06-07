@@ -11,10 +11,18 @@ const Navbar = () => {
       </NavLink>
       <NavLink className={(e)=>e.isActive ? "text-red-400 " :"hover:border-b-2 duration-50"} to="/about">
         About
-      </NavLink>
+        </NavLink>
+       <NavLink
+                className={(e) => (e.isActive ? "text-red-400" : "")}
+                to="/favroite"
+            >
+                Favroite
+            </NavLink>
+
       <NavLink className={(e)=>e.isActive ? "text-red-400 " :"hover:border-b-2 duration-50"} to="/create">
         CreateRecipe
       </NavLink>
+      
     </div>
   );
 };
