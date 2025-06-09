@@ -1,3 +1,15 @@
+📌 Project 1: RecipesApp
+A simple recipe management application using:
+
+React + Context API for state management
+
+LocalStorage for data persistence
+
+Users can add, view, and delete recipes
+
+📁 Folder: /RecipesApp-ContextAPI
+🧠 Concepts: Context API, Hooks, LocalStorage, Props
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
