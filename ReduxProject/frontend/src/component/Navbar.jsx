@@ -1,13 +1,22 @@
 import { NavLink } from "react-router-dom";
 
-const Nav = () => {
-    return (
-        <nav className="mb-10 flex justify-center items-center gap-x-5 p-5">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/products">Products</NavLink>
-            <NavLink to="/login">Login</NavLink>
-        </nav>
-    );
+const Navbar = () => {
+  return (
+    <div className="h-16 bg-gray-800 text-white flex items-center justify-center shadow-md">
+      <nav className="flex items-center gap-x-6 text-lg font-medium">
+        <NavLink to="/" className="hover:text-blue-400 transition">
+          Home
+        </NavLink>
+        <NavLink to="/products" className="hover:text-blue-400 transition">
+          Products
+        </NavLink>
+        <NavLink to="/login" className="hover:text-blue-400 transition">
+          Login
+        </NavLink>
+      
+      </nav>
+    </div>
+  );
 };
 
-export default Nav;
+export default Navbar;
