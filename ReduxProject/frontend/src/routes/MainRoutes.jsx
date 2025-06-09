@@ -3,7 +3,7 @@ import Home from "../pages/Home";
 import PageNotFound from "../PageNotFound";
 import Products from "../pages/Products";
 import Login from '../pages/Login'
-import Register from "../Register";
+import Register from "../pages/Register";
 
 
 const MainRoutes = () => {
