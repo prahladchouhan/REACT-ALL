@@ -1,5 +1,6 @@
+import { toast } from "react-toastify";
 import axios from "../../api/apiconfig";
-import { loaduser } from "../reducers/userSlice";
+import { loaduser ,removeuser } from "../reducers/userSlice";
 
 export const asynccurrentuser = () => async (dispatch, getState) => {
     try {
@@ -24,17 +25,23 @@ export const asyncloginuser = (user) => async (dispatch, getState) => {
 export const asynclogoutuser = () => async (dispatch, getState) => {
     try {
         localStorage.removeItem("user");
-        console.log("User Logged Out!");
+        dispatch(removeuser());
+        // console.log("User Logged Out!");
+        toast.dark("Logged Out!")
     } catch (error) {
         console.log(error);
+        toast.loading("Something went wrong!❓")
     }
 };
 
 export const asyncregisteruser = (user) => async (dispatch, getState) => {
     try {
         const res = await axios.post("/users", user);
-        console.log(res);
+        // console.log(res);
+          toast.dark("Register success!❤️")
+         
     } catch (error) {
         console.log(error);
+          toast.error("Something went wrong!❓")
     }
 };

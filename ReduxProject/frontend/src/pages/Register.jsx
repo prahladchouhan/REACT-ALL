@@ -1,6 +1,5 @@
 import {  NavLink, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { nanoid } from "nanoid";
 import { asyncregisteruser } from "../store/actions/userAction";
@@ -16,8 +15,7 @@ const Register = () => {
         user.isAdmin = false;
         dispatch(asyncregisteruser(user));
         navigate("/login");
-         toast.success("Register Suucessfully!");
-   
+    
   }
 
   return (
