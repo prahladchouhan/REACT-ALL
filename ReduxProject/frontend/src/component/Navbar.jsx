@@ -1,19 +1,15 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch ,useSelector } from "react-redux";
-import { asynclogoutuser } from "../store/actions/userAction";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-   
+ 
 
-  const LogoutHandler = () => {
-    dispatch(asynclogoutuser());
-    navigate("/");
-  };
+  const user = useSelector((state) => state.userReducer.users);
+
   return (
     <div className="h-16 bg-gray-800 text-white flex items-center justify-center shadow-md">
       <nav className="flex items-center gap-x-6 text-lg font-medium">
+        
         <NavLink to="/" className="hover:text-blue-400 transition">
           Home
         </NavLink>
@@ -21,15 +17,20 @@ const Navbar = () => {
           Products
         </NavLink>
 
-    
-            <NavLink to="/admin/create-product">Create Product</NavLink>
-            <button onClick={LogoutHandler}>Logout</button>
-           
-          
+        {user ? (
+          <>
+            {user && user?.isAdmin && (
+              <NavLink to="/admin/create-product">Create Product</NavLink>
+            )}
+           <NavLink to="/admin/user-profile">Settings</NavLink>
+          </>
+        ) : (
+          <>
             <NavLink to="/login" className="hover:text-blue-400 transition">
               Login
             </NavLink>
-         
+          </>
+        )}
       </nav>
     </div>
   );

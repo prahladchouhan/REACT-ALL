@@ -6,7 +6,7 @@ export const asynccurrentuser = () => async (dispatch, getState) => {
     try {
         const user = JSON.parse(localStorage.getItem("user"));
         if (user) dispatch(loaduser(user));
-        else console.log("User not logged in!");
+        // else console.log("User not logged in!");
     } catch (error) {
         console.log(error);
     }
@@ -43,5 +43,24 @@ export const asyncregisteruser = (user) => async (dispatch, getState) => {
     } catch (error) {
         console.log(error);
           toast.error("Something went wrong!❓")
+    }
+};
+
+export const asyncupdateuser = (id, user) => async (dispatch, getState) => {
+    try {
+        const { data } = await axios.patch("/users/" + id, user);
+        localStorage.setItem("user", JSON.stringify(data));
+        dispatch(asynccurrentuser());
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const asyncdeleteuser = (id) => async (dispatch, getState) => {
+    try {
+        await axios.delete("/users/" + id);
+        dispatch(asynclogoutuser());
+    } catch (error) {
+        console.log(error);
     }
 };
