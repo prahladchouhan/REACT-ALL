@@ -6,6 +6,20 @@
       "email": "admin@master.com",
       "password": "123456",
       "isAdmin": true
+    },
+    {
+      "id": "zdujafl0gebqeLFRYboCS",
+      "name": "ram",
+      "email": "ram@gmail.com",
+      "password": "123456",
+      "isAdmin": false
+    },
+    {
+      "id": "QsLcCX8HH8BmFWWVBjZDJ",
+      "name": "Prahlad Chauhan",
+      "email": "prahlad@gmail.com",
+      "password": "123456",
+      "isAdmin": false
     }
   ],
   "products": [
@@ -16,6 +30,38 @@
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "EP41zNM1sSNjLRleI0Rr6",
+      "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
+      "title": "sdasd",
+      "price": "123",
+      "description": "DADASACACZDSDsad",
+      "category": "books "
+    },
+    {
+      "id": "wOwv5a59xr_eyOBl6nXRe",
+      "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
+      "title": "sSs",
+      "price": "122",
+      "description": "asdasda",
+      "category": "demo"
+    },
+    {
+      "id": "RtfWPRKmXruFIUaX4bFBB",
+      "image": "https://images.unsplash.com/photo-1749829258864-5a119b3fd400?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D",
+      "title": "wwsasAS",
+      "price": "112",
+      "description": "THIS FOR THE TESTING PERPOSE PLS IGONE IT",
+      "category": "DEMO"
+    },
+    {
+      "id": "fqgjrAu_rV2rdWYGviDaU",
+      "image": "https://images.unsplash.com/photo-1749829258864-5a119b3fd400?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D",
+      "title": "demo ",
+      "price": "250",
+      "description": "padksan jdnsad a jksajkd akaj  jkaa c",
+      "category": "DEMO"
     }
   ],
   "carts": []
