@@ -9,7 +9,8 @@ import {
 
 const UserProfile = () => {
   const { users } = useSelector((state) => state.userReducer);
-  const { register, reset, handleSubmit } = useForm({
+  console.log(users)
+  const { register, handleSubmit } = useForm({
     defaultValues: {
       username: users?.username,
       email: users?.email,

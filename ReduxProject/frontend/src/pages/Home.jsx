@@ -1,15 +1,20 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  // const user = useSelector((state) => state.userReducer.users);
+  // console.log(user + " from the home page");
+
   return (
     <div className="min-h-screen bg-gray-900 text-white px-6 py-10">
       {/* Hero Section */}
       <section className="text-center max-w-3xl mx-auto mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-4">
-          Welcome to DarkKart 🛒
+          Welcome to ReduxKart 🛒
         </h1>
         <p className="text-gray-300 text-lg mb-6">
-          Discover quality products at unbeatable prices. Explore categories, enjoy deals, and shop securely — all in dark mode.
+          Shop confidently with secure payments and trusted products.
+Enjoy amazing deals across every category — from fashion to electronics and more.
         </p>
         <div className="flex justify-center gap-4 flex-wrap">
           <Link
@@ -18,17 +23,20 @@ const Home = () => {
           >
             🛍️ Shop Now
           </Link>
-          <Link
-            to="/login"
-            className="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-md text-sm font-medium transition"
-          >
-            🔑 Login
-          </Link>
+
+         
+              {/* <Link
+                to="/login"
+                className="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-md text-sm font-medium transition"
+              >
+                🔑 Login
+              </Link>
+             */}
         </div>
       </section>
 
       {/* Featured Products Preview */}
-      {/* <section className="max-w-6xl mx-auto">
+      <section className="max-w-6xl mx-auto">
         <h2 className="text-2xl font-semibold text-white mb-6">
           🔥 Featured Products
         </h2>
@@ -44,7 +52,9 @@ const Home = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-lg text-blue-400 font-semibold mb-1">Product #{id}</h3>
+                <h3 className="text-lg text-blue-400 font-semibold mb-1">
+                  Product #{id}
+                </h3>
                 <p className="text-gray-300 text-sm mb-3">
                   A short and sweet product description goes here.
                 </p>
@@ -58,10 +68,9 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
     </div>
   );
 };
-
 
 export default Home;

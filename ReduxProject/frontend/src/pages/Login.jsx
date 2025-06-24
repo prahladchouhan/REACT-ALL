@@ -1,17 +1,18 @@
 import { toast } from "react-toastify";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Await, NavLink, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { asyncloginuser } from "../store/actions/userAction";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { register, reset, handleSubmit } = useForm();
-
+  const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
 
-  const LoginHandle = (user) => {
+  const LoginHandle =  (user) => {
     dispatch(asyncloginuser(user));
+    console.log(user+" login handler!");
+    
     toast.success("Login Suucessfully!");
     navigate("/");
   };
@@ -19,7 +20,7 @@ const Login = () => {
     <div>
       <div className=" mt-20 flex items-center  justify-center bg-gray-900 text-white">
         <div className="w-full max-w-md bg-gray-800 p-8 rounded-xl shadow-lg">
-          <h2 className="text-2xl font-bold text-center mb-6">Register</h2>
+          <h2 className="text-2xl font-bold text-center mb-6">Login </h2>
 
           <form onSubmit={handleSubmit(LoginHandle)} className="space-y-5">
             <div>

@@ -2,20 +2,20 @@
   "users": [
     {
       "id": "7u_lDy_UQfThBsJKWToYZ",
-      "username": "admin.master",
+      "username": "Master Admin",
       "email": "admin@master.com",
       "password": "123456",
       "isAdmin": true
     },
     {
-      "id": "zdujafl0gebqeLFRYboCS",
-      "name": "ram",
-      "email": "ram@gmail.com",
+      "id": "TfiUCrxKc_QyvOhoHXZNh",
+      "name": "test",
+      "email": "test@gmail.com",
       "password": "123456",
       "isAdmin": false
     },
     {
-      "id": "QsLcCX8HH8BmFWWVBjZDJ",
+      "id": "98vxRMEzWadOFaXOpfQpk",
       "name": "Prahlad Chauhan",
       "email": "prahlad@gmail.com",
       "password": "123456",
@@ -24,43 +24,27 @@
   ],
   "products": [
     {
-      "id": "1",
-      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      "price": 109.95,
-      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-    },
-    {
-      "id": "EP41zNM1sSNjLRleI0Rr6",
-      "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
-      "title": "sdasd",
-      "price": "123",
-      "description": "DADASACACZDSDsad",
-      "category": "books "
-    },
-    {
-      "id": "wOwv5a59xr_eyOBl6nXRe",
-      "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
-      "title": "sSs",
-      "price": "122",
-      "description": "asdasda",
+      "id": "RtfWPRKmXruFIUaX4bFBB",
+      "image": "https://images.unsplash.com/photo-1749829258864-5a119b3fd400?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D",
+      "title": "testing admin pro",
+      "price": "112",
+      "description": "THIS FOR THE TESTING PERPOSE PLS IGONE IT",
       "category": "demo"
     },
     {
-      "id": "RtfWPRKmXruFIUaX4bFBB",
+      "id": "NcFE4syYkQpfjWeZWxbej",
       "image": "https://images.unsplash.com/photo-1749829258864-5a119b3fd400?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D",
-      "title": "wwsasAS",
-      "price": "112",
-      "description": "THIS FOR THE TESTING PERPOSE PLS IGONE IT",
-      "category": "DEMO"
+      "title": "hello ",
+      "price": "123",
+      "description": "csc",
+      "category": "test"
     },
     {
-      "id": "fqgjrAu_rV2rdWYGviDaU",
-      "image": "https://images.unsplash.com/photo-1749829258864-5a119b3fd400?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D",
-      "title": "demo ",
-      "price": "250",
-      "description": "padksan jdnsad a jksajkd akaj  jkaa c",
+      "id": "NFr04N0KyN66unJpyDQXJ",
+      "image": "https://images.unsplash.com/photo-1750274570282-9c031490f525?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "title": "saad",
+      "price": "1234",
+      "description": "ssc",
       "category": "DEMO"
     }
   ],
