@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { Await, NavLink, useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { asyncloginuser } from "../store/actions/userAction";
@@ -10,9 +10,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const LoginHandle =  (user) => {
-    dispatch(asyncloginuser(user));
-    console.log(user+" login handler!");
-    
+    dispatch(asyncloginuser(user));    
     toast.success("Login Suucessfully!");
     navigate("/");
   };

@@ -5,47 +5,107 @@
       "username": "Master Admin",
       "email": "admin@master.com",
       "password": "123456",
-      "isAdmin": true
+      "isAdmin": true,
+      "cart": [
+        {
+          "product": {
+            "id": "NcFE4syYkQpfjWeZWxbej",
+            "image": "https://images.unsplash.com/photo-1749829258864-5a119b3fd400?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D",
+            "title": "cup",
+            "price": "123",
+            "description": "perimun cup\n",
+            "category": "test"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "NFr04N0KyN66unJpyDQXJ",
+            "image": "https://images.unsplash.com/photo-1750274570282-9c031490f525?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+            "title": "wallpaper",
+            "price": "1234",
+            "description": "design",
+            "category": "home"
+          },
+          "quantity": 2
+        }
+      ]
     },
     {
-      "id": "TfiUCrxKc_QyvOhoHXZNh",
-      "name": "test",
+      "id": "acuiEbP8F78d6UFI-spLi",
+      "username": "test case1002",
       "email": "test@gmail.com",
       "password": "123456",
-      "isAdmin": false
-    },
-    {
-      "id": "98vxRMEzWadOFaXOpfQpk",
-      "name": "Prahlad Chauhan",
-      "email": "prahlad@gmail.com",
-      "password": "123456",
-      "isAdmin": false
+      "isAdmin": false,
+      "cart": [
+        {
+          "product": {
+            "id": "1",
+            "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+            "price": 109.95,
+            "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+            "category": "men's clothing",
+            "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "NFr04N0KyN66unJpyDQXJ",
+            "image": "https://images.unsplash.com/photo-1750274570282-9c031490f525?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+            "title": "wallpaper",
+            "price": "1234",
+            "description": "design",
+            "category": "home"
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "ICTlBJOLg7GvESL8Qoc8q",
+            "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D",
+            "title": "(IsLife)Book",
+            "price": "129",
+            "description": "value of life! ",
+            "category": "book"
+          },
+          "quantity": 2
+        }
+      ]
     }
   ],
   "products": [
     {
-      "id": "RtfWPRKmXruFIUaX4bFBB",
-      "image": "https://images.unsplash.com/photo-1749829258864-5a119b3fd400?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D",
-      "title": "testing admin pro",
-      "price": "112",
-      "description": "THIS FOR THE TESTING PERPOSE PLS IGONE IT",
-      "category": "demo"
-    },
-    {
       "id": "NcFE4syYkQpfjWeZWxbej",
       "image": "https://images.unsplash.com/photo-1749829258864-5a119b3fd400?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D",
-      "title": "hello ",
+      "title": "cup",
       "price": "123",
-      "description": "csc",
+      "description": "perimun cup\n",
       "category": "test"
     },
     {
       "id": "NFr04N0KyN66unJpyDQXJ",
       "image": "https://images.unsplash.com/photo-1750274570282-9c031490f525?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
-      "title": "saad",
+      "title": "wallpaper",
       "price": "1234",
-      "description": "ssc",
-      "category": "DEMO"
+      "description": "design",
+      "category": "home"
+    },
+    {
+      "id": "1",
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "ICTlBJOLg7GvESL8Qoc8q",
+      "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D",
+      "title": "(IsLife)Book",
+      "price": "129",
+      "description": "value of life! ",
+      "category": "book"
     }
   ],
   "carts": []

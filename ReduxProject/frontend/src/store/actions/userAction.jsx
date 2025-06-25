@@ -8,16 +8,17 @@ export const asynccurrentuser = () => async (dispatch) => {
     if (user) dispatch(loaduser(user));
     else console.log("User not logged in!");
   } catch (error) {
-    // toast.error("something went wrong!")
     console.log(error);
   }
 };
-export const asyncloginuser = (user) => async () => {
+export const asyncloginuser = (user) => async (dispatch) => {
   try {
     const { data } = await axios.get(
       `/users?email=${user.email}&password=${user.password}`
     );
+   
     localStorage.setItem("user", JSON.stringify(data[0]));
+     dispatch(asynccurrentuser());      
   } catch (error) {
     console.log(error);
   }
@@ -27,16 +28,14 @@ export const asynclogoutuser = () => async (dispatch) => {
   try {
     localStorage.removeItem("user");
     dispatch(removeuser());
-    toast.dark("Logged Out!");
   } catch (error) {
     console.log(error);
-    toast.loading("Something went wrong!❓");
   }
 };
 
 export const asyncregisteruser = (user) => async () => {
   try {
-    const res = await axios.post("/users", user);
+    await axios.post("/users", user);
     toast.dark("Register success!❤️");
   } catch (error) {
     console.log(error);
@@ -49,6 +48,7 @@ export const asyncupdateuser = (id, user) => async (dispatch) => {
     const { data } = await axios.patch("/users/" + id, user);
     localStorage.setItem("user", JSON.stringify(data));
     dispatch(asynccurrentuser());
+      //  console.log("User Updated!");  
   } catch (error) {
     console.log(error);
   }

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { asynccreateproduct } from "../../store/actions/productAction";
 
 const CreateProduct = () => {
-    const { register, reset, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const CreateProductHandler = (product) => {

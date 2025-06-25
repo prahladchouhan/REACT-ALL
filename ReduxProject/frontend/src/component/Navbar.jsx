@@ -1,12 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 
 const Navbar = () => {
   const user = useSelector((state) => state.userReducer.users);
-
-  //
-  console.log("User in Navbar:", user);
 
   return (
     <div className="h-16 bg-gray-800 text-white flex items-center justify-center shadow-md">
@@ -32,6 +28,12 @@ const Navbar = () => {
               className="hover:text-blue-400 transition"
             >
               Settings
+            </NavLink>
+             <NavLink
+              to="/cart"
+              className="hover:text-blue-400 transition"
+            >
+              Cart
             </NavLink>
           </>
         ) : (

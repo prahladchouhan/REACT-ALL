@@ -8,7 +8,12 @@ import CreateProduct from "../pages/admin/createProduct";
 import ProductDetails from"../pages/admin/ProductDetails";
 import AuthWrapper from "./AuthWrapper";
 import UserProfile from "../pages/user/userProfile";
+import { useSelector } from "react-redux";
+import Cart from "../pages/Cart";
 const MainRoutes = () => {
+
+    const user=useSelector((state)=>state.userReducer.users);
+    
   return (
     <div className="">
       <Routes>
@@ -37,6 +42,14 @@ const MainRoutes = () => {
                 element={
                     <AuthWrapper>
                         <ProductDetails />
+                    </AuthWrapper>
+                }
+            />
+            <Route
+                path="/cart"
+                element={
+                    <AuthWrapper>
+                        <Cart />
                     </AuthWrapper>
                 }
             />

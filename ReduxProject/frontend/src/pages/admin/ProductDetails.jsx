@@ -12,7 +12,7 @@ const ProductDetails = () => {
     } = useSelector((state) => state);
     const product = products?.find((product) => product.id == id);
 
-    const { register, reset, handleSubmit } = useForm({
+    const { register, handleSubmit } = useForm({
         defaultValues: {
             image: product?.image,
             title: product?.title,
