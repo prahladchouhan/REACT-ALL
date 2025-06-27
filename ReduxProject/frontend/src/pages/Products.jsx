@@ -1,75 +1,68 @@
+import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { asyncupdateuser } from "../store/actions/userAction";
+import { lazy, Suspense, useEffect, useState } from "react";
+
+import { loadlazyproducts } from "../store/reducers/ProductSlice";
+import InfiniteScroll from "react-infinite-scroll-component";
+const ProductCard=lazy(()=>import("../component/ProductCard"))
 
 const Products = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.productReducer.products);
+  // console.log(products)
   const users = useSelector((state) => state.userReducer.users);
+  const [hasMore, sethasMore] = useState(true);
+  const fetchproducts = async () => {
+    try {
+      const {data} = await axios.get(
+        `/products?_limit=6&_start=${products.length}`
+      );
+      console.log(data);
+      
 
-  const AddToCard = (product) => {
-    const copyuser = { ...users, cart: [...users.cart]  };
-    const items = copyuser.cart.findIndex((c) => c?.product?.id == product.id);
-
-    if (items == -1) {
-      copyuser.cart.push({ product, quantity: 1 });
-    } else {
-      copyuser.cart[items] = {
-        product,
-        quantity: copyuser.cart[items].quantity + 1,
-      };
-    }    
-    dispatch(asyncupdateuser(copyuser.id, copyuser));
+      console.log(
+        "Fetching from:",
+        `/products?_limit=6&_start=${products.length}`
+      );
+      console.log(data);
+      console.log("Fetched:", data.length);
+      
+      if (data.length === 0) {
+        sethasMore(false);
+        console.log("No more data!");
+      } else {
+        dispatch(loadlazyproducts(data));
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
-  const renderproduct = products.map((product) => {
-    return (
-      <div
-        key={product.id}
-        className="w-full sm:w-[48%] m-2 justify-between  lg:w-[31%] bg-gray-800 text-white border border-gray-700 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
-      >
-        {/* Product Image */}
-        <img
-          className="w-full h-48 object-cover"
-          src={product.image}
-          alt={product.title}
-        />
 
-        {/* Product Content */}
-        <div className="p-4">
-          <h1 className="text-lg font-semibold text-blue-400 mb-1">
-            {product.title}
-          </h1>
-          <p className="text-sm text-gray-300 mb-3">
-            {product.description.slice(0, 100)}...
-          </p>
+  useEffect(() => {
+    fetchproducts();
+  }, []);
 
-          {/* Price & Button */}
-          <div className="flex justify-between items-center mb-4">
-            <p className="text-green-400 font-semibold">${product.price}</p>
-            <button
-              className="bg-blue-600 hover:bg-blue-700 text-sm px-3 py-1 rounded-md transition"
-              onClick={() => AddToCard(product)}
-            >
-              🛒 Add to Cart
-            </button>
-          </div>
-
-          {/* More Info Link */}
-          <Link
-            to={`/product/${product.id}`}
-            className="block text-center bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md text-sm transition"
-          >
-            🔍 More Info
-          </Link>
-        </div>
+  return (
+    <InfiniteScroll
+      dataLength={products.length}
+      next={fetchproducts}
+      hasMore={hasMore}
+      loader={<h4>Loading...</h4>}
+      endMessage={
+        <p style={{ textAlign: "center" }}>
+          <b>Yay! You have seen it all</b>
+        </p>
+      }
+    >
+      {" "}
+      <div className="  flex flex-wrap">
+         {products.map((p, i) => (
+        <Suspense key={i} fallback={<h1>LOADING...</h1>}>
+          {<ProductCard p={p}/>}
+        </Suspense>
+         ))}
       </div>
-    );
-  });
-
-  return products.length > 0 ? (
-    <div className=" overflow-auto flex flex-wrap">{renderproduct}</div>
-  ) : (
-    "Loading..."
+    </InfiniteScroll>
   );
 };
 

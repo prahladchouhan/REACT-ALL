@@ -2,15 +2,17 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  // const user = useSelector((state) => state.userReducer.users);
-  // console.log(user + " from the home page");
+
+  const user=useSelector((state)=>state.userReducer.users);
+  console.log(user);
+  
 
   return (
     <div className="min-h-screen bg-gray-900 text-white px-6 py-10">
       {/* Hero Section */}
       <section className="text-center max-w-3xl mx-auto mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-4">
-          Welcome to ReduxKart 🛒
+          Welcome to DarkKart 🛒
         </h1>
         <p className="text-gray-300 text-lg mb-6">
           Shop confidently with secure payments and trusted products.
@@ -36,7 +38,7 @@ Enjoy amazing deals across every category — from fashion to electronics and mo
       </section>
 
       {/* Featured Products Preview */}
-      <section className="max-w-6xl mx-auto">
+      {/* <section className="max-w-6xl mx-auto">
         <h2 className="text-2xl font-semibold text-white mb-6">
           🔥 Featured Products
         </h2>
@@ -68,7 +70,7 @@ Enjoy amazing deals across every category — from fashion to electronics and mo
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

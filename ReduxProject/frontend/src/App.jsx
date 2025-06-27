@@ -4,16 +4,17 @@ import MainRoutes from "./routes/MainRoutes";
 import { asynccurrentuser } from "./store/actions/userAction";
 import { useEffect } from "react";
 import { asyncloadproducts } from "./store/actions/productAction";
+import { Users } from "lucide-react";
 
 const App = () => {
   // user loading..
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.userReducer);
+  const { users } = useSelector((state) => state.userReducer);
   const { products } = useSelector((state) => state.productReducer);
 
   useEffect(() => {
-    !user && dispatch(asynccurrentuser());
-  }, [user]);
+    !users && dispatch(asynccurrentuser());
+  }, [users]);
   useEffect(() => {
     products.length == 0 && dispatch(asyncloadproducts());
   }, [products]);

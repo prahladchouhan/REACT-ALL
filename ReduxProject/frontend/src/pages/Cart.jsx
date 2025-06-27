@@ -4,7 +4,6 @@ import { asyncupdateuser } from "../store/actions/userAction";
 const Cart = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.userReducer.users);
-  // const product = useSelector((state) => state.productReducer.products);
 
   const IncQuanity = (index) => {
     const copyuser = { ...users, cart: [...users.cart] };
@@ -32,13 +31,12 @@ const Cart = () => {
 
   const cartlist = users?.cart?.map((o, i) => {
     return (
- 
-    <div
+      <div
         key={i}
-        className="flex flex-col m-4 md:flex-row items-center gap-4 justify-between bg-gray-800 p-4 rounded-lg border border-gray-700 shadow-sm hover:shadow-md transition"
+        className="flex flex-col m-4 md:flex-row items-center  gap-4 justify-between bg-gray-800 p-4 rounded-lg border border-gray-700 shadow-sm hover:shadow-md transition"
       >
         <img
-          className="w-30 h-30 object-cover rounded-md"
+          className="w-25 h-25 object-cover rounded-md"
           src={o.product.image}
           alt={o.product.title}
         />
@@ -67,10 +65,16 @@ const Cart = () => {
           </button>
         </div>
       </div>
-   
     );
   });
-  return <div className="">{cartlist}</div>;
+  return (
+    <div className="min-h-screen rounded-xl bg-gray-900 text-white p-8 ">
+      <h1 className="text-3xl font-semibold border-b-1 p-2  text-blue-400 mb-6">
+        🛒 Your Cart ...
+      </h1>
+      {cartlist}
+    </div>
+  );
 };
 
 export default Cart;
