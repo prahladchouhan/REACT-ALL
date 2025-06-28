@@ -1,69 +1,39 @@
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { lazy, Suspense, useEffect, useState } from "react";
-
+import { useEffect } from "react";
 import { loadlazyproducts } from "../store/reducers/ProductSlice";
-import InfiniteScroll from "react-infinite-scroll-component";
-const ProductCard=lazy(()=>import("../component/ProductCard"))
+import ProductCard from "../component/ProductCard"; // No lazy loading now
 
 const Products = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.productReducer.products);
-  // console.log(products)
-  const users = useSelector((state) => state.userReducer.users);
-  const [hasMore, sethasMore] = useState(true);
+ 
   const fetchproducts = async () => {
     try {
-      const {data} = await axios.get(
-        `/products?_limit=6&_start=${products.length}`
-      );
-      console.log(data);
-      
-
-      console.log(
-        "Fetching from:",
-        `/products?_limit=6&_start=${products.length}`
-      );
-      console.log(data);
-      console.log("Fetched:", data.length);
-      
-      if (data.length === 0) {
-        sethasMore(false);
-        console.log("No more data!");
-      } else {
-        dispatch(loadlazyproducts(data));
-      }
-    } catch (error) {
-      console.log(error);
+      const res = await axios.get("/products"); // Full product fetch
+      const data = Array.isArray(res.data) ? res.data : res.data.products || [];
+      dispatch(loadlazyproducts(data));
+    } catch (err) {
+      console.error("Error fetching products:", err);
     }
   };
+  console.log(products.length);
 
   useEffect(() => {
-    fetchproducts();
+    fetchproducts(); 
+    console.log(products.length)
+    // Fetch once on mount
   }, []);
 
   return (
-    <InfiniteScroll
-      dataLength={products.length}
-      next={fetchproducts}
-      hasMore={hasMore}
-      loader={<h4>Loading...</h4>}
-      endMessage={
-        <p style={{ textAlign: "center" }}>
-          <b>Yay! You have seen it all</b>
-        </p>
-      }
-    >
-      {" "}
-      <div className="  flex flex-wrap">
-         {products.map((p, i) => (
-        <Suspense key={i} fallback={<h1>LOADING...</h1>}>
-          {<ProductCard p={p}/>}
-        </Suspense>
-         ))}
-      </div>
-    </InfiniteScroll>
+    <div className="flex flex-wrap  gap-4 px-2">
+      
+        <ProductCard  />
+      
+    </div>
   );
 };
 
 export default Products;
+
+

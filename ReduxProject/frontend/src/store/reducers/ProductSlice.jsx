@@ -1,23 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    products: [],
+  products: [],
 };
 
 const ProductSlice = createSlice({
-    name: "product",
-    initialState,
-    reducers: {
-        loadproduct: (state, action) => {
-            // here we can not call api
-            state.products = action.payload;
-        },
-         loadlazyproducts: (state, action) => {
-            state.products = [...state.products, ...action.payload];
-
-        },
+  name: "product",
+  initialState,
+  reducers: {
+    loadproduct: (state, action) => {
+      // here we can not call api
+      state.products = action.payload;
     },
+    //  loadlazyproducts: (state, action) => {
+    //     state.products = [...state.products, ...action.payload];
+
+    // },
+    loadlazyproducts: (state, action) => {
+      state.products = action.payload;
+    },
+  },
 });
 
 export default ProductSlice.reducer;
-export const { loadproduct ,loadlazyproducts } = ProductSlice.actions;
+export const { loadproduct, loadlazyproducts } = ProductSlice.actions;
