@@ -8,12 +8,19 @@ const Recipes = () => {
     const renderrecipes = data.map((recipe) => (
         <RecipeCard key={recipe.id} recipe={recipe}/>
     ));
+  
 
     return (
         <>
-        <div className="flex flex-wrap">
-            {data.length > 0 ? renderrecipes : "No recipes found!"}
-        </div>
+      <div className="flex flex-wrap gap-6 px-4 py-8">
+  {data.length > 0 ? (
+    renderrecipes
+  ) : (
+    <p className="text-xl text-red-400 font-semibold bg-white px-6 py-4 rounded-xl shadow animate-pulse">
+      🚫 No recipes found. Try a different search!
+    </p>
+  )}
+</div>
         </>
         
     );
