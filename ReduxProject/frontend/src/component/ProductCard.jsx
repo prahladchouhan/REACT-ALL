@@ -1,4 +1,3 @@
-
 import { useDispatch, useSelector } from "react-redux";
 import { asyncupdateuser } from "../store/actions/userAction";
 import { Link } from "react-router-dom";
@@ -13,10 +12,25 @@ const ProductCard = () => {
       (c) => c?.product?.id === product.id
     );
 
+    // if (existingIndex === -1) {
+    //   updatedUser.cart.push({ product, quantity: 1 });
+    // } else {
+    //   updatedUser.cart[existingIndex].quantity += 1;
+    // }
     if (existingIndex === -1) {
       updatedUser.cart.push({ product, quantity: 1 });
     } else {
-      updatedUser.cart[existingIndex].quantity += 1;
+      const existingItem = updatedUser.cart[existingIndex];
+      const updatedItem = {
+        ...existingItem,
+        quantity: existingItem.quantity + 1,
+      };
+
+      updatedUser.cart = [
+        ...updatedUser.cart.slice(0, existingIndex),
+        updatedItem,
+        ...updatedUser.cart.slice(existingIndex + 1),
+      ];
     }
 
     dispatch(asyncupdateuser(updatedUser.id, updatedUser));
@@ -71,4 +85,3 @@ const ProductCard = () => {
 };
 
 export default ProductCard;
-

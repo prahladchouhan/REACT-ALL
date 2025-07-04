@@ -6,19 +6,7 @@
       "email": "admin@master.com",
       "password": "123456",
       "isAdmin": true,
-      "cart": [
-        {
-          "product": {
-            "id": "1",
-            "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-            "price": 109.95,
-            "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-            "category": "men's clothing",
-            "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-          },
-          "quantity": 5
-        }
-      ]
+      "cart": []
     },
     {
       "id": "NRE_Ic7hyA4QeM3HJoPM1",
@@ -29,14 +17,14 @@
       "cart": [
         {
           "product": {
-            "id": "iUZ5RgQgVGUjyZBS8xFX_",
-            "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-            "title": "Mens Cotton Jacket",
-            "price": "2000",
-            "description": "\"great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.\",\n",
-            "category": "men's clothing"
+            "id": "ICTlBJOLg7GvESL8Qoc8q",
+            "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D",
+            "title": "(IsLife)Book",
+            "price": "129",
+            "description": "value of life! ",
+            "category": "book"
           },
-          "quantity": 2
+          "quantity": 1
         }
       ]
     },
@@ -136,16 +124,24 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "id": "yw3K4E3RVH96Kthpo8DTs",
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "123456",
+      "isAdmin": false,
+      "cart": []
     }
   ],
   "products": [
     {
       "id": "NcFE4syYkQpfjWeZWxbej",
       "image": "https://images.unsplash.com/photo-1749829258864-5a119b3fd400?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D",
-      "title": "cup",
+      "title": "EcoSip Classic Cup",
       "price": "123",
-      "description": "perimun cup\n",
-      "category": "test"
+      "description": "A durable, stylish cup perfect for daily use. Ideal for hot or cold drinks, easy to clean, and eco-friendly.",
+      "category": "Home"
     },
     {
       "id": "1",
@@ -160,15 +156,15 @@
       "image": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D",
       "title": "(IsLife)Book",
       "price": "129",
-      "description": "value of life! ",
+      "description": "(IsLife)Book is a thought-provoking journal designed to help you reflect, plan, and grow. It inspires mindful living, personal development, and self-discovery through guided prompts and creative space.",
       "category": "book"
     },
     {
       "id": "XxcAJLee190W34wZTGAXw",
       "image": "https://images.unsplash.com/photo-1750268223092-ea38152a71a9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8",
-      "title": "Painting",
+      "title": "\"Whispers of Color\"",
       "price": "1000",
-      "description": "unique pic painting only 100 in world",
+      "description": "This unique painting captures emotion and imagination in every brushstroke. Crafted with vivid colors and abstract depth, it tells a silent story that speaks differently to each viewer. A perfect blend of creativity and expression, it's more than art—it’s a statement piece. Only 100 pieces available, truly one-of-a-kind.",
       "category": "Paintings"
     },
     {
