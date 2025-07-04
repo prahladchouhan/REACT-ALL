@@ -9,13 +9,8 @@ const ProductSlice = createSlice({
   initialState,
   reducers: {
     loadproduct: (state, action) => {
-      // here we can not call api
       state.products = action.payload;
     },
-    //  loadlazyproducts: (state, action) => {
-    //     state.products = [...state.products, ...action.payload];
-
-    // },
     loadlazyproducts: (state, action) => {
       state.products = action.payload;
     },

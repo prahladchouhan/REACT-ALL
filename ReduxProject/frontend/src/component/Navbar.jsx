@@ -2,7 +2,7 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // Optional: Lucide icons
+import { Menu, X } from "lucide-react"; 
 
 const Navbar = () => {
   const user = useSelector((state) => state.userReducer.users);

@@ -36,12 +36,13 @@ const UserProfile = () => {
   return users ? (
     <div className="min-h-screen bg-gray-900 text-white p-8">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-6 xl font-semibold  flex justify-center text-blue-400 mb-2">
+        <h1 className="text-5xl font-semibold  flex justify-center text-blue-400 mb-2">
           {users.username}
         </h1>
         <h2 className="text-lg text-gray-300 mb-6 flex justify-center">{users.email}</h2>
         
-        <hr className="border-gray-700 mb-10" />
+        <hr className="border-gray-700 mb-1" />
+         <hr className="border-gray-700 mb-10" />
         <form
           onSubmit={handleSubmit(UpdateUserHandler)}
           className="flex flex-col gap-4"
@@ -64,18 +65,13 @@ const UserProfile = () => {
             type="password"
             placeholder="********"
           />
-
-          {/* Buttons Block */}
           <div className="flex gap-3 mt-4 flex-wrap">
-            {/* Update Button */}
             <button
               type="submit"
               className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white text-sm px-4 py-2 rounded-md transition"
             >
               🛠️ Update
             </button>
-
-            {/* Logout Button */}
             <button
               type="button"
               onClick={LogoutUserHandler}
@@ -83,8 +79,6 @@ const UserProfile = () => {
             >
               🚪 Logout
             </button>
-
-            {/* Delete Button */}
             <button
               type="button"
               onClick={DeleteHandler}

@@ -1,20 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import{lazy} from "react";
 import { useSelector } from "react-redux";
-
-// import Home from "../pages/Home";
-// import PageNotFound from "../PageNotFound";
-// import Products from "../pages/Products";
-// import Login from "../pages/Login";
-// import Register from "../pages/Register";
-// import CreateProduct from "../pages/admin/createProduct";
-// import ProductDetails from "../pages/admin/ProductDetails";
-// import AuthWrapper from "./AuthWrapper";
-// import UserProfile from "../pages/user/userProfile";
-// import Cart from "../pages/Cart";
-// import UnauthWrapper from "./UnauthWrapper";
-
-
 const Home=lazy(()=>import("../pages/Home"));
 const PageNotFound=lazy(()=>import("../PageNotFound"));
 const Products=lazy(()=>import("../pages/Products"));
@@ -23,7 +9,7 @@ const Register=lazy(()=>import("../pages/Register"));
 const CreateProduct=lazy(()=>import("../pages/admin/createProduct"));
 const ProductDetails=lazy(()=>import("../pages/admin/ProductDetails"));
 const AuthWrapper=lazy(()=>import("./AuthWrapper"));
-const UserProfile=lazy(()=>import("../pages/user/userProfile"));
+const UserProfile=lazy(()=>import("../pages/user/UserProfile"));
 const UnauthWrapper=lazy(()=>import("./UnauthWrapper"));
 const Cart=lazy(()=>import("../pages/Cart"));
 

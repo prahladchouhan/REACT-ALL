@@ -2,7 +2,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loadlazyproducts } from "../store/reducers/ProductSlice";
-import ProductCard from "../component/ProductCard"; // No lazy loading now
+import ProductCard from "../component/ProductCard"; 
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const Products = () => {
  
   const fetchproducts = async () => {
     try {
-      const res = await axios.get("/products"); // Full product fetch
+      const res = await axios.get("/products"); 
       const data = Array.isArray(res.data) ? res.data : res.data.products || [];
       dispatch(loadlazyproducts(data));
     } catch (err) {
