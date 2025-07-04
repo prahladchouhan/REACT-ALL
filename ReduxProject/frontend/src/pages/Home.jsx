@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const Home = () => {
 
   const user=useSelector((state)=>state.userReducer.users);
-  console.log(user);
   
 
   return (
@@ -26,19 +25,19 @@ Enjoy amazing deals across every category — from fashion to electronics and mo
             🛍️ Shop Now
           </Link>
 
-         
-              {/* <Link
+         {!user?(
+              <Link
                 to="/login"
                 className="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-md text-sm font-medium transition"
               >
                 🔑 Login
               </Link>
-             */}
+         ):(<></>)}
         </div>
       </section>
 
       {/* Featured Products Preview */}
-      {/* <section className="max-w-6xl mx-auto">
+      <section className="max-w-6xl mx-auto">
         <h2 className="text-2xl font-semibold text-white mb-6">
           🔥 Featured Products
         </h2>
@@ -55,7 +54,8 @@ Enjoy amazing deals across every category — from fashion to electronics and mo
               />
               <div className="p-4">
                 <h3 className="text-lg text-blue-400 font-semibold mb-1">
-                  Product #{id}
+                  Product 
+                  
                 </h3>
                 <p className="text-gray-300 text-sm mb-3">
                   A short and sweet product description goes here.
@@ -70,7 +70,7 @@ Enjoy amazing deals across every category — from fashion to electronics and mo
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { recipecontext } from "../context/RecipesContext";
-import RecipeCard from "../components/RecipeCard";
+// import RecipeCard from "../components/RecipeCard";
 
 const Favroite = () => {
     const { fav } = useContext(recipecontext);

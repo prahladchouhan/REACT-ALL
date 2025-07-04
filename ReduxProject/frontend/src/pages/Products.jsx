@@ -17,12 +17,9 @@ const Products = () => {
       console.error("Error fetching products:", err);
     }
   };
-  console.log(products.length);
 
   useEffect(() => {
     fetchproducts(); 
-    console.log(products.length)
-    // Fetch once on mount
   }, []);
 
   return (
