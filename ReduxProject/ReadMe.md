@@ -1,4 +1,5 @@
 📌 Project 2: Redux Store App
+ "Darkkart!" 
 An e-commerce-like app to explore and learn Redux basics:
 
 Add/remove items to/from the cart
